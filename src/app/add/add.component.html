@@ -1,0 +1,11 @@
+<form action="">
+    <p>title</p>
+    <input [(ngModel)]="book.title" name="title" type="text">
+    <p>price</p>
+    <input [(ngModel)]="book.price" name="price" type="number">
+    <p>description</p>
+    <input [(ngModel)]="book.desc" name="desc" type="text">
+    <p>author</p>
+    <input [(ngModel)]="book.author" name="author" type="text">
+    <button (click)="onSubmit()">Submit</button>
+</form>
