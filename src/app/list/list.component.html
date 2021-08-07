@@ -1,22 +1,68 @@
 <h3>Danh sách book</h3>
-<table border="1">
-    <tr>
-        <td>STT</td>
-        <td>Title</td>
-        <td>Price</td>
-        <td>Desc</td>
-        <td>Author</td>
-        <td>Action</td>
-    </tr>
-    <tr *ngFor="let item of books;let i = index">
-        <td>{{ i + 1}}</td>
-        <td>{{item.title}}</td>
-        <td>{{item.price}}</td>
-        <td>{{item.desc}}</td>
-        <td>{{item.author}}</td>
-        <td>
-            <a routerLink = "/edit/{{item.id}}">Sửa</a>
-            <button (click)="onRemoveBook(item.id)">Xóa</button>
-        </td>
-    </tr>
-</table>
+<div class="table w-full p-2">
+    <table class="w-full border">
+        <thead>
+            <tr class="bg-gray-50 border-b">
+                <th class="border-r p-2">
+                    STT
+                </th>
+                <th class="p-2 border-r cursor-pointer text-sm font-thin text-gray-500">
+                    <div class="flex items-center justify-center">
+                        Title
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
+                        </svg>
+                    </div>
+                </th>
+                <th class="p-2 border-r cursor-pointer text-sm font-thin text-gray-500">
+                    <div class="flex items-center justify-center">
+                        Price
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
+                        </svg>
+                    </div>
+                </th>
+                <th class="p-2 border-r cursor-pointer text-sm font-thin text-gray-500">
+                    <div class="flex items-center justify-center">
+                        Description
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
+                        </svg>
+                    </div>
+                </th>
+                <th class="p-2 border-r cursor-pointer text-sm font-thin text-gray-500">
+                    <div class="flex items-center justify-center">
+                        Author
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
+                        </svg>
+                    </div>
+                </th>
+                <th class="p-2 border-r cursor-pointer text-sm font-thin text-gray-500">
+                    <div class="flex items-center justify-center">
+                        Action
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
+                        </svg>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-gray-100 text-center border-b text-sm text-gray-600" 
+            *ngFor="let item of books;let i = index">
+                <td class="p-2 border-r">{{ i + 1}}</td>
+                <td class="p-2 border-r">{{item.title}}</td>
+                <td class="p-2 border-r">{{item.price}}</td>
+                <td class="p-2 border-r">{{item.desc}}</td>
+                <td class="p-2 border-r">{{item.author}}</td>
+                <td>
+                    <a class="bg-blue-500 p-2 text-white hover:shadow-lg text-xs font-thin" 
+                    routerLink = "/edit/{{item.id}}">Sửa</a>
+                    <button class="bg-red-500 p-2 text-white hover:shadow-lg text-xs font-thin" 
+                    (click)="onRemoveBook(item.id)">Xóa</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
